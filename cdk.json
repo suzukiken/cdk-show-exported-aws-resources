@@ -32,6 +32,18 @@
     "@aws-cdk/core:target-partitions": [
       "aws",
       "aws-cn"
-    ]
+    ],
+    "secret_arn_exportname": "secret-arn",
+    "topic_arn_exportname": "topic-arn",
+    "queue_url_exportname": "queue-url",
+    "queue_arn_exportname": "queue-arn",
+    "table_name_exportname": "table-name",
+    "bucket_name_exportname": "bucket-name",
+    "function_name_exportname": "function-name",
+    "statemachine_arn_exportname": "statemachine-arn",
+    "appsyncapi_id_exportname": "appsyncapi-id",
+    "appsyncapi_url_exportname": "appsyncapi-url",
+    "distribution_id_exportname": "distribution-id",
+    "role_arn_exportname": "role-arn"
   }
 }

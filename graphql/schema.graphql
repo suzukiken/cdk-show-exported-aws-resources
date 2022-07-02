@@ -1,0 +1,9 @@
+schema {
+  query: Query
+}
+type Query {
+  getKicadPcb(project_dir: String): String
+  getFirmware(project_dir: String): String
+  getGcode(project_dir: String, event_dir: String): String
+  getStl(project_dir: String): String
+}
