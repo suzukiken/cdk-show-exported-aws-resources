@@ -25,9 +25,12 @@ for stack_name in stack_names:
     try:
         outputs = stack.outputs
     except:
-        outputs = []
+        pass
 
-    for output in stack.outputs:
+    if not outputs:
+        break
+
+    for output in outputs:
         if output.get("Description"):
             descr = output.get("Description").lower()
             value = output.get("OutputValue")
