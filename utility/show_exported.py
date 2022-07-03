@@ -73,6 +73,9 @@ for stack_name in stack_names:
                 if not value.startswith("https:"):
                     name = value
                     url = f"https://ap-northeast-1.console.aws.amazon.com/appsync/home?region=ap-northeast-1#/{name}/v1/home"
+            elif "eventbridge" in descr:
+                name = value
+                url = f"https://ap-northeast-1.console.aws.amazon.com/events/home?region=ap-northeast-1#/eventbus/default/rules/{name}"
             if url:
                 output.update({"URL": url})
         exported_values.append(output)
