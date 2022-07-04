@@ -11,7 +11,6 @@ output = subprocess.run(["cdk", "list"] + sys.argv[1:], capture_output=True)
 
 stack_names = []
 stacks = []
-exported_values = []
 
 for line in output.stdout.decode("utf8").split("\n"):
     if line.strip():
@@ -21,6 +20,7 @@ print(stack_names)
 
 for stack_name in stack_names:
     stack = cloudformation.Stack(stack_name)
+    exported_values = []
 
     try:
         outputs = stack.outputs
@@ -28,7 +28,7 @@ for stack_name in stack_names:
         pass
 
     if not outputs:
-        break
+        outputs = []
 
     for output in outputs:
         if output.get("Description"):
@@ -79,6 +79,7 @@ for stack_name in stack_names:
             if url:
                 output.update({"URL": url})
         exported_values.append(output)
+
     stacks.append(
         {
             "Name": stack_name,
